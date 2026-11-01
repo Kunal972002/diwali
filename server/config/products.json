@@ -1,0 +1,134 @@
+{
+  "farmName": "Bhaskar Banana Farm",
+  "currency": "₹",
+  "paymentNotice": "No advance booking fee required. Easy Pay on Delivery after inspecting your farm-fresh Diwali essentials.",
+  "placeholderNotice": "Prices are currently placeholder configurations for Diwali pre-booking calculations directly from Bhaskar Banana Farm.",
+  "products": [
+    {
+      "id": "banana-tree",
+      "name": "Fresh Banana Tree",
+      "tagline": "Sacred Living Stems for Entrance Auspiciousness",
+      "description": "Pair of freshly harvested young banana tree stems with lush, vibrant broad leaves. Traditionally erected on both sides of the main entrance to usher in prosperity, positive energy, and divine blessings of Goddess Lakshmi during Diwali.",
+      "image": "/assets/fresh_banana_tree.jpg",
+      "variantType": "Height",
+      "unitLabel": "Pair of 2 Stems",
+      "features": [
+        "Freshly cut on Diwali morning for peak vibrancy",
+        "Tied with auspicious red & yellow sacred thread (Mauli)",
+        "Includes sturdy earthen base support recommendations",
+        "Carefully packaged to prevent leaf damage during transit"
+      ],
+      "variants": [
+        {
+          "id": "tree-3ft",
+          "label": "3 Feet",
+          "dimension": "3 Feet Height",
+          "price": 350,
+          "placeholderTag": "₹[Price Placeholder]",
+          "description": "Ideal for apartment doorways and balcony mandirs"
+        },
+        {
+          "id": "tree-5ft",
+          "label": "5 Feet",
+          "dimension": "5 Feet Height",
+          "price": 550,
+          "placeholderTag": "₹[Price Placeholder]",
+          "popular": true,
+          "description": "Standard height, perfect for most home entrances"
+        },
+        {
+          "id": "tree-7ft",
+          "label": "7 Feet",
+          "dimension": "7 Feet Height",
+          "price": 750,
+          "placeholderTag": "₹[Price Placeholder]",
+          "description": "Majestic height for bungalows, villas & grand gates"
+        }
+      ]
+    },
+    {
+      "id": "ready-made-toran",
+      "name": "Traditional Ready-Made Toran",
+      "tagline": "Handcrafted Fresh Mango Leaves & Fragrant Marigolds",
+      "description": "Clean, authentic festive entrance toran crafted by traditional artisans using fresh organic mango leaves and alternating bright yellow & saffron marigold blossoms. Ready to hang right out of the eco-friendly box.",
+      "image": "/assets/traditional_toran.jpg",
+      "variantType": "Length",
+      "unitLabel": "Ready-to-Hang Garland",
+      "features": [
+        "Aromatic fresh mango leaves (Amba pan) symbolizing good luck",
+        "Plump golden and orange marigolds strung tightly",
+        "Reinforced natural jute rope with hanging end-loops",
+        "Sprayed with natural hydration mist before dispatch"
+      ],
+      "variants": [
+        {
+          "id": "toran-3ft",
+          "label": "3 Feet Length",
+          "dimension": "3 Feet",
+          "price": 240,
+          "placeholderTag": "₹[Price Placeholder]",
+          "description": "Best for compact single apartment doors"
+        },
+        {
+          "id": "toran-4ft",
+          "label": "4 Feet Length",
+          "dimension": "4 Feet",
+          "price": 320,
+          "placeholderTag": "₹[Price Placeholder]",
+          "popular": true,
+          "description": "Standard standard size for main entry doors"
+        },
+        {
+          "id": "toran-6ft",
+          "label": "6 Feet Length",
+          "dimension": "6 Feet",
+          "price": 460,
+          "placeholderTag": "₹[Price Placeholder]",
+          "description": "Grand length for double doors and archways"
+        }
+      ]
+    },
+    {
+      "id": "banana-leaf-plates",
+      "name": "Natural Banana Leaf Plates",
+      "tagline": "Traditional Eco-Friendly Puja Offering & Festive Dining Pattal",
+      "description": "Traditional natural banana leaf plates for offering food to God during Diwali पूजा and other religious rituals.",
+      "image": "/assets/banana_leaf_plates.jpg",
+      "variantType": "Pack Size",
+      "unitLabel": "Pack",
+      "features": [
+        "100% natural, chemical-free fresh banana leaf dining surface",
+        "Reinforced rim stitching with natural plant fiber for strength",
+        "Naturally antimicrobial, leak-resistant and aroma-enhancing",
+        "Complete eco-friendly biodegradability"
+      ],
+      "variants": [
+        {
+          "id": "plates-pack-15",
+          "label": "Pack of 15 Plates",
+          "dimension": "15 Plates",
+          "price": 180,
+          "placeholderTag": "₹[Price Placeholder]",
+          "description": "Ideal for Diwali Lakshmi Puja Naivedya and close family"
+        },
+        {
+          "id": "plates-pack-25",
+          "label": "Pack of 25 Plates",
+          "dimension": "25 Plates",
+          "price": 280,
+          "placeholderTag": "₹[Price Placeholder]",
+          "popular": true,
+          "description": "Most popular for joint family gatherings & prasad"
+        },
+        {
+          "id": "plates-pack-50",
+          "label": "Pack of 50 Plates",
+          "dimension": "50 Plates",
+          "price": 500,
+          "placeholderTag": "₹[Price Placeholder]",
+          "description": "Value pack for society celebrations & Annakut feast"
+        }
+      ]
+    }
+  ]
+}
