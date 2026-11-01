@@ -1,62 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <defs>
-    <linearGradient id="leafGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4CAF50"/>
-      <stop offset="100%" stop-color="#2E7D32"/>
-    </linearGradient>
-    <linearGradient id="leafGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#81C784"/>
-      <stop offset="100%" stop-color="#388E3C"/>
-    </linearGradient>
-    <linearGradient id="leafGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#A5D6A7"/>
-      <stop offset="100%" stop-color="#43A047"/>
-    </linearGradient>
-    <linearGradient id="trunkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#2E7D32"/>
-      <stop offset="50%" stop-color="#66BB6A"/>
-      <stop offset="100%" stop-color="#1B5E20"/>
-    </linearGradient>
-    <linearGradient id="bananaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFEE58"/>
-      <stop offset="100%" stop-color="#FBC02D"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Circular subtle dark gold-tinted glow background so it stands out on both light and dark browser themes -->
-  <circle cx="50" cy="50" r="48" fill="#0C2517" stroke="#D4AF37" stroke-width="2.5"/>
-
-  <!-- Earthen base / soil -->
-  <ellipse cx="50" cy="85" rx="22" ry="5" fill="#4E342E" opacity="0.8"/>
-
-  <!-- Main Banana Trunk / Stem -->
-  <path d="M46 50 Q47 70 44 85 L56 85 Q53 70 54 50 Z" fill="url(#trunkGrad)"/>
-  <line x1="50" y1="50" x2="50" y2="85" stroke="#1B5E20" stroke-width="1.5" opacity="0.5"/>
-
-  <!-- Lower Left Arching Banana Leaf -->
-  <path d="M48 56 C32 50 14 54 10 68 C16 72 34 68 47 60 Z" fill="url(#leafGrad1)"/>
-  <!-- Lower Right Arching Banana Leaf -->
-  <path d="M52 56 C68 50 86 54 90 68 C84 72 66 68 53 60 Z" fill="url(#leafGrad1)"/>
-
-  <!-- Mid Left Arching Broad Leaf -->
-  <path d="M49 48 C30 36 12 38 8 50 C16 56 36 52 48 52 Z" fill="url(#leafGrad2)"/>
-  <!-- Mid Right Arching Broad Leaf -->
-  <path d="M51 48 C70 36 88 38 92 50 C84 56 64 52 52 52 Z" fill="url(#leafGrad2)"/>
-
-  <!-- Upper Left Graceful Banana Leaf -->
-  <path d="M50 42 C36 24 20 20 16 28 C26 36 42 36 49 44 Z" fill="url(#leafGrad3)"/>
-  <!-- Upper Right Graceful Banana Leaf -->
-  <path d="M50 42 C64 24 80 20 84 28 C74 36 58 36 51 44 Z" fill="url(#leafGrad3)"/>
-
-  <!-- Center Top Fresh Sprouting Leaf Shoot -->
-  <path d="M49 42 Q48 14 50 10 Q52 14 51 42 Z" fill="#C8E6C9"/>
-
-  <!-- Auspicious Small Golden Banana Bunch -->
-  <path d="M47 55 Q49 59 48 63 Q51 61 51 55 Z" fill="url(#bananaGrad)"/>
-  <path d="M50 55 Q52 60 51 64 Q54 62 53 55 Z" fill="url(#bananaGrad)"/>
-  <path d="M52 56 Q54 60 54 63 Q55 59 54 56 Z" fill="url(#bananaGrad)"/>
-
-  <!-- Auspicious Sacred Red & Yellow Mauli Ribbon on Trunk -->
-  <rect x="45.5" y="68" width="9" height="2.5" rx="1" fill="#D32F2F"/>
-  <rect x="45.5" y="70.5" width="9" height="2.5" rx="1" fill="#FFC107"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Clean Simple Banana Tree Favicon -->
+  <!-- Main Trunk / Stem -->
+  <path d="M21 24 C22 35 21 43 20 46 L28 46 C27 43 26 35 27 24 Z" fill="#2E7D32"/>
+  <path d="M22 24 C23 35 22 43 22 46 L26 46 C26 43 25 35 26 24 Z" fill="#43A047"/>
+  <!-- Central Sprout -->
+  <path d="M23.5 4 C22 12 22.5 20 23 24 L25 24 C25.5 20 26 12 24.5 4 Z" fill="#81C784"/>
+  <!-- Top Left Graceful Banana Leaf -->
+  <path d="M23 16 C15 8 8 8 3 13 C7 20 16 19 23 18 Z" fill="#4CAF50"/>
+  <!-- Top Right Graceful Banana Leaf -->
+  <path d="M25 16 C33 8 40 8 45 13 C41 20 32 19 25 18 Z" fill="#388E3C"/>
+  <!-- Mid Left Broad Arching Leaf -->
+  <path d="M22 22 C13 16 5 19 1 27 C8 30 18 28 23 24 Z" fill="#66BB6A"/>
+  <!-- Mid Right Broad Arching Leaf -->
+  <path d="M26 22 C35 16 43 19 47 27 C40 30 30 28 25 24 Z" fill="#43A047"/>
+  <!-- Lower Left Arching Leaf -->
+  <path d="M21 28 C14 26 7 29 4 36 C10 38 18 35 22 30 Z" fill="#388E3C"/>
+  <!-- Lower Right Arching Leaf -->
+  <path d="M27 28 C34 26 41 29 44 36 C38 38 30 35 26 30 Z" fill="#2E7D32"/>
+  <!-- Auspicious Small Yellow Banana Bunch -->
+  <circle cx="24" cy="24" r="2.5" fill="#FDD835"/>
 </svg>

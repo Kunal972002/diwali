@@ -68,21 +68,21 @@ const DEFAULT_PRODUCTS_DATA = {
     },
     {
       id: 'banana-leaf-plates',
-      name: 'Natural Banana Leaf Plates',
-      tagline: 'Eco-Friendly Puja Offering & Traditional Dining Pattal',
-      description: 'Traditional natural banana leaf plates for offering food to God during Diwali पूजा and other religious rituals.',
+      name: 'Natural Banana Leaf Round Cuts',
+      tagline: 'Fresh Circular Cut Banana Leaves for Puja & Traditional Dining',
+      description: 'Traditional natural round cut banana leaves for offering food to God during Diwali पूजा and other religious rituals.',
       image: '/assets/banana_leaf_plates.jpg',
       variantType: 'Pack Size',
       unitLabel: 'Pack',
       features: [
-        '100% natural, chemical-free fresh banana leaf dining surface',
-        'Reinforced rim stitching with natural plant fiber for strength',
-        'Naturally antimicrobial, leak-resistant and aroma-enhancing'
+        '100% natural, fresh circular cut organic banana leaf dining surface',
+        'Traditional shape for sacred puja naivedya and feast serving',
+        'Naturally antimicrobial, fresh aroma and eco-friendly'
       ],
       variants: [
-        { id: 'plates-pack-15', label: 'Pack of 15 Plates', dimension: '15 Plates', price: 180, placeholderTag: '₹[Price Placeholder]', description: 'Puja Naivedya & close family' },
-        { id: 'plates-pack-25', label: 'Pack of 25 Plates', dimension: '25 Plates', price: 280, placeholderTag: '₹[Price Placeholder]', popular: true, description: 'Family feast & prasad distribution' },
-        { id: 'plates-pack-50', label: 'Pack of 50 Plates', dimension: '50 Plates', price: 500, placeholderTag: '₹[Price Placeholder]', description: 'Festive community feast' }
+        { id: 'plates-pack-15', label: 'Pack of 15 Rounds', dimension: '15 Round Cuts', price: 180, placeholderTag: '₹[Price Placeholder]', description: 'Puja Naivedya & close family' },
+        { id: 'plates-pack-25', label: 'Pack of 25 Rounds', dimension: '25 Round Cuts', price: 280, placeholderTag: '₹[Price Placeholder]', popular: true, description: 'Family feast & prasad distribution' },
+        { id: 'plates-pack-50', label: 'Pack of 50 Rounds', dimension: '50 Round Cuts', price: 500, placeholderTag: '₹[Price Placeholder]', description: 'Festive community feast' }
       ]
     }
   ]
@@ -507,8 +507,6 @@ export default function App() {
 
                   <div className="product-body">
                     <h3 className="product-title">{product.name}</h3>
-                    <p className="product-tagline">{product.tagline}</p>
-                    <p className="product-description">{product.description}</p>
 
                     {/* Variant Selector */}
                     <div className="variant-section">
