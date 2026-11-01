@@ -88,7 +88,7 @@ export async function pushOrderToGoogleSheet(order) {
   const paymentModeLabel = isPickup ? 'Pay at Pickup (Cash / UPI)' : 'Pay on Delivery (Cash / UPI)';
 
   const formattedAddress = isPickup
-    ? `[Self Pickup - Free] Bajrang Chaat House, Beside JIO BP petrol pump, Angaon Road, Fulchur Naka, Gondia`
+    ? `[Self Pickup - Free] Bajrang Chaat House, Beside JIO BP petrol pump, Amgaon Road, Fulchur Naka, Gondia`
     : `[Home Delivery | Fee: ₹${order.delivery_fee || 0}] ${order.delivery_address || 'Not specified'}`;
 
   const payload = {

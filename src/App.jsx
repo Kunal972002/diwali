@@ -88,7 +88,7 @@ const DEFAULT_PRODUCTS_DATA = {
   ]
 };
 
-export const PICKUP_POINT_ADDRESS = 'Bajrang Chaat House, Beside JIO BP petrol pump, Angaon Road, Fulchur Naka, Gondia';
+export const PICKUP_POINT_ADDRESS = 'Bajrang Chaat House, Beside JIO BP petrol pump, Amgaon Road, Fulchur Naka, Gondia';
 
 export default function App() {
   const [catalog, setCatalog] = useState(DEFAULT_PRODUCTS_DATA);
@@ -841,7 +841,7 @@ export default function App() {
                         <span>Pickup Point Address:</span>
                       </div>
                       <p className="pickup-loc-address">
-                        <strong>Bajrang Chaat House</strong>, Beside JIO BP petrol pump, Angaon Road, Fulchur Naka, Gondia
+                        <strong>Bajrang Chaat House</strong>, Beside JIO BP petrol pump, Amgaon Road, Fulchur Naka, Gondia
                       </p>
                     </div>
                   </div>
@@ -926,7 +926,7 @@ export default function App() {
                         <div className="pickup-box-text">
                           <strong>Self Pickup Point Selected:</strong>
                           <p>
-                            Bajrang Chaat House, Beside JIO BP petrol pump, Angaon Road, Fulchur Naka, Gondia.
+                            Bajrang Chaat House, Beside JIO BP petrol pump, Amgaon Road, Fulchur Naka, Gondia.
                           </p>
                           <small>✓ No home address required. Simply visit on Diwali morning with your booking name or phone number.</small>
                         </div>

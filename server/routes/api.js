@@ -141,7 +141,7 @@ router.post('/orders/create', async (req, res) => {
       .reduce((sum, item) => sum + item.quantity, 0);
 
     const isPickup = fulfillmentType === 'pickup';
-    const PICKUP_POINT_ADDRESS = 'Bajrang Chaat House, Beside JIO BP petrol pump, Angaon Road, Fulchur Naka, Gondia';
+    const PICKUP_POINT_ADDRESS = 'Bajrang Chaat House, Beside JIO BP petrol pump, Amgaon Road, Fulchur Naka, Gondia';
 
     let deliveryFee = 0;
     let effectiveAddress = '';
