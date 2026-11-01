@@ -1,82 +1,75 @@
 import fs from 'fs';
 import path from 'path';
-import sqlite3 from 'sqlite3';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// In Vercel serverless environment, local filesystem is read-only except /tmp
-const dbDir = process.env.VERCEL ? '/tmp' : path.join(__dirname, 'data');
+const dbDir = path.join(__dirname, 'data');
 const dbPath = path.join(dbDir, 'diwali_orders.db');
 
-try {
-  if (!fs.existsSync(dbDir)) {
-    fs.mkdirSync(dbDir, { recursive: true });
-  }
-} catch (e) {
-  // directory might already exist
-}
-
-// In-memory fallback map in case SQLite is unavailable in serverless
+// In-memory fallback map (active on Vercel and whenever SQLite is not needed)
 const memoryStore = new Map();
-
 let db = null;
-try {
-  db = new sqlite3.Database(dbPath, (err) => {
-    if (err) {
-      console.warn('SQLite init warning (will use in-memory store):', err.message);
-      db = null;
-    } else {
-      console.log('Connected to SQLite database at:', dbPath);
-    }
-  });
-} catch (e) {
-  console.warn('SQLite instantiation failed (using in-memory store):', e.message);
-  db = null;
-}
 
 // Initialize database schema
-export function initDb() {
-  return new Promise((resolve) => {
-    if (!db) {
-      console.log('Using in-memory order store (serverless ready).');
-      return resolve();
+export async function initDb() {
+  if (process.env.VERCEL) {
+    console.log('Running on Vercel serverless: using resilient memoryStore + Google Sheets sync.');
+    return;
+  }
+
+  try {
+    if (!fs.existsSync(dbDir)) {
+      fs.mkdirSync(dbDir, { recursive: true });
     }
+    const sqliteModule = await import('sqlite3');
+    const sqlite3 = sqliteModule.default || sqliteModule;
 
-    const createTableQuery = `
-      CREATE TABLE IF NOT EXISTS orders (
-        id TEXT PRIMARY KEY,
-        customer_name TEXT NOT NULL,
-        customer_phone TEXT NOT NULL,
-        delivery_address TEXT,
-        special_instructions TEXT,
-        items TEXT NOT NULL,
-        total_order_value REAL NOT NULL,
-        booking_amount REAL NOT NULL DEFAULT 50.0,
-        remaining_balance REAL NOT NULL,
-        payment_status TEXT NOT NULL DEFAULT 'PENDING',
-        cashfree_order_id TEXT,
-        cashfree_payment_id TEXT,
-        cashfree_payment_session_id TEXT,
-        payment_details TEXT,
-        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
-      );
-    `;
+    await new Promise((resolve) => {
+      db = new sqlite3.Database(dbPath, (err) => {
+        if (err) {
+          console.warn('SQLite init warning:', err.message);
+          db = null;
+          return resolve();
+        }
+        console.log('Connected to SQLite database at:', dbPath);
 
-    db.run(createTableQuery, (err) => {
-      if (err) {
-        console.warn('Warning creating orders table (using fallback):', err.message);
-        return resolve();
-      }
-      // Add missing columns if upgrading an existing db
-      db.run("ALTER TABLE orders ADD COLUMN fulfillment_type TEXT DEFAULT 'delivery'", () => {});
-      db.run("ALTER TABLE orders ADD COLUMN delivery_fee REAL DEFAULT 0", () => {});
-      console.log('Orders table verified/created successfully.');
-      resolve();
+        const createTableQuery = `
+          CREATE TABLE IF NOT EXISTS orders (
+            id TEXT PRIMARY KEY,
+            customer_name TEXT NOT NULL,
+            customer_phone TEXT NOT NULL,
+            delivery_address TEXT,
+            special_instructions TEXT,
+            items TEXT NOT NULL,
+            total_order_value REAL NOT NULL,
+            booking_amount REAL NOT NULL DEFAULT 50.0,
+            remaining_balance REAL NOT NULL,
+            payment_status TEXT NOT NULL DEFAULT 'PENDING',
+            cashfree_order_id TEXT,
+            cashfree_payment_id TEXT,
+            cashfree_payment_session_id TEXT,
+            payment_details TEXT,
+            fulfillment_type TEXT DEFAULT 'delivery',
+            delivery_fee REAL DEFAULT 0,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+          );
+        `;
+
+        db.run(createTableQuery, () => {
+          db.run("ALTER TABLE orders ADD COLUMN fulfillment_type TEXT DEFAULT 'delivery'", () => {});
+          db.run("ALTER TABLE orders ADD COLUMN delivery_fee REAL DEFAULT 0", () => {});
+          console.log('Orders table verified/created successfully.');
+          resolve();
+        });
+      });
     });
-  });
+  } catch (err) {
+    console.warn('SQLite loading skipped, using in-memory store:', err.message);
+    db = null;
+  }
 }
 
 // Create a new order
